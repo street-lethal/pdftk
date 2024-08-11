@@ -14,3 +14,11 @@ docker-compose build
   ```sh
   ./scripts/exec.sh
   ```
+
+## PDF からメタデータ抽出
+
+* .pdf ファイルを shared/ に配置
+* 
+  ```sh
+  ./scripts/dump.sh
+  ```
