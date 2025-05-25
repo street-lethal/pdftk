@@ -1,9 +1,10 @@
 services:
   pdftk:
     build: .
-    working_dir: /root/shared
+    working_dir: /root/tmp
     environment:
       LANG: C.UTF-8
     volumes:
-      - ./shared:/root/shared
+      - ./input:/root/input
+      - ./output:/root/output
       - ./scripts_in_docker:/root/scripts
