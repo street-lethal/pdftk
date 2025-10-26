@@ -1,10 +1,12 @@
 services:
   pdftk:
     build: .
-    working_dir: /root/tmp
+    working_dir: /app
     environment:
       LANG: C.UTF-8
+    user: "${USER_ID}:${GROUP_ID}"
     volumes:
-      - ./input:/root/input
-      - ./output:/root/output
-      - ./scripts_in_docker:/root/scripts
+      - ./input:/app/input
+      - ./output:/app/output
+      - ./scripts_in_docker:/app/scripts
+      - /etc/group:/etc/group:ro
