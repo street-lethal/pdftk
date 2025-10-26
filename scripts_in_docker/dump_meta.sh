@@ -1,14 +1,12 @@
 #!/bin/bash
-cd ../input
-ls *.pdf > ../tmp/filenames.txt
-cd ../tmp
+cd input
+ls *.pdf > /tmp/filenames.txt
 while read filename
 do
   export without_ext=$(echo $filename | sed -e "s/\.pdf\$//")
-  cp ../input/"$filename" tmp_input.pdf
-  pdftk tmp_input.pdf dump_data > tmp_input.txt
-  chown 1000:1000 tmp_input.txt
-  mv tmp_input.txt ../output/"$without_ext.txt"
-  rm tmp_input.*
-done < filenames.txt
-rm filenames.txt
+  cp "$filename" /tmp/tmp_input.pdf
+  pdftk /tmp/tmp_input.pdf dump_data > /tmp/tmp_input.txt
+  mv /tmp/tmp_input.txt ../output/"$without_ext.txt"
+  rm /tmp/tmp_input.*
+done < /tmp/filenames.txt
+rm /tmp/filenames.txt
