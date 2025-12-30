@@ -6,7 +6,9 @@ services:
       LANG: C.UTF-8
     user: "${USER_ID}:${GROUP_ID}"
     volumes:
-      - ./input:/app/input
+      - ./input:/app/input:ro
       - ./output:/app/output
-      - ./scripts_in_docker:/app/scripts
+      - ./scripts_in_docker:/app/scripts:ro
       - /etc/group:/etc/group:ro
+    cap_drop:
+      - ALL
