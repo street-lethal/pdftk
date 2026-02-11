@@ -1,5 +1,5 @@
 services:
-  pdftk:
+  app:
     build: .
     working_dir: /app
     environment:
@@ -8,7 +8,7 @@ services:
     volumes:
       - ./input:/app/input:ro
       - ./output:/app/output
-      - ./scripts_in_docker:/app/scripts:ro
+      - ./scripts/in_docker:/app/scripts:ro
       - /etc/group:/etc/group:ro
     cap_drop:
       - ALL
