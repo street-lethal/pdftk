@@ -1,3 +1,5 @@
 input/*
 output/*
+data/*
 .env
+main
