@@ -9,6 +9,8 @@ services:
       - ./input:/app/input:ro
       - ./output:/app/output
       - ./scripts/in_docker:/app/scripts:ro
+      - ./bin:/app/bin:ro
+      - ./data:/app/data:ro
       - /etc/group:/etc/group:ro
     cap_drop:
       - ALL
